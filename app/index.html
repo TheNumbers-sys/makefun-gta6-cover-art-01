@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10111b">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <title>Vice City Cover Studio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="studio">
+    <aside class="sidebar">
+      <header class="brand"><div class="brand-mark">VC</div><div><p class="eyebrow">MAKE YOUR MOMENT</p><h1>Vice City<br>Cover Studio</h1></div></header>
+      <p class="intro">Turn your photos into a neon-soaked story from the city after dark.</p>
+      <section class="control-section">
+        <div class="section-heading"><span class="step">01</span><h2>Your photos</h2></div>
+        <label class="upload" for="photos"><span class="upload-icon">＋</span><span><b>Add photos</b><small>They stay on your device</small></span><input id="photos" type="file" accept="image/*" multiple></label>
+        <button id="samples" class="quiet-button" type="button">✦ &nbsp;Try the sample photos</button>
+        <div id="photo-list" class="photo-list"></div>
+      </section>
+      <section class="control-section">
+        <div class="section-heading"><span class="step">02</span><h2>Build your panels</h2></div>
+        <label class="field-label" for="layout">Layout</label><select id="layout"><option value="strip">3 panel · hero + two</option><option value="split">2 panel · split</option><option value="grid">2 × 2 · story grid</option><option value="hero">Single · hero</option></select>
+        <div id="panel-controls" class="panel-controls"></div>
+      </section>
+      <section class="control-section words-section">
+        <div class="section-heading"><span class="step">03</span><h2>Your story</h2></div>
+        <label class="field-label" for="title">Main caption</label><input id="title" maxlength="34" value="VICE CITY NIGHTS">
+        <label class="field-label" for="subtitle">Subtitle</label><input id="subtitle" maxlength="54" value="EVERY NIGHT HAS A STORY">
+        <label class="field-label" for="tagline">Small tagline</label><input id="tagline" maxlength="54" value="SUNSET BLVD · 1986">
+        <div class="inline-fields"><label class="field-label">Lettering<select id="style"><option value="bold">Sunset Bold</option><option value="neon">Neon Glow</option><option value="gold">Vice Gold</option></select></label><label class="field-label">Caption<select id="position"><option value="bottom">Bottom</option><option value="top">Top</option></select></label></div>
+      </section>
+      <section class="control-section export-section">
+        <div class="section-heading"><span class="step">04</span><h2>Make it yours</h2></div>
+        <label class="field-label" for="size">Export size</label><select id="size"><option value="square">Square · 1080 × 1080</option><option value="portrait">Portrait · 1080 × 1350</option><option value="landscape" selected>Landscape · 1920 × 1080</option></select>
+        <button id="export" class="export-button" type="button"><span>Export cover</span><span>↗</span></button>
+        <p id="status" role="status">Your cover is ready to make.</p>
+      </section>
+      <footer>VICE CITY COVER STUDIO <span>•</span> MADE FOR THE NIGHT</footer>
+    </aside>
+    <section class="workspace">
+      <div class="workspace-top"><div><p class="eyebrow">THE CANVAS</p><h2>Your cover, in progress</h2></div><span class="live-pill"><i></i> LIVE PREVIEW</span></div>
+      <div class="canvas-wrap"><canvas id="cover" width="960" height="540" aria-label="Live cover preview"></canvas></div>
+      <div class="workspace-bottom"><span>✦ &nbsp; SUNSET GRADE · NEON EDGE · CITY STORIES</span><span id="canvas-size">1920 × 1080</span></div>
+    </section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
